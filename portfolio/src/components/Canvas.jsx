@@ -52,7 +52,7 @@ const Canvas = () => {
         this.y = y;
         this.vx = vx * particleSpeed;
         this.vy = vy * particleSpeed;
-        this.radius = Math.random() * (2.5 - 0.3) + 0.3; //randomize radius between 0.3 and 2.5
+        this.radius = Math.random() * (3 - 1) + 1; //randomize radius between 0.3 and 2.5
         this.color = color;
         this.opacity = 1; //base particle opacity
       }
@@ -117,13 +117,13 @@ const Canvas = () => {
             (particle.x - otherParticle.x) ** 2 +
               (particle.y - otherParticle.y) ** 2
           );
-          if (linkDistance < 70 && distance < 250) {
+          if (linkDistance < 75 && distance < 250) {
             // link if both particles are within radius
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.strokeStyle = `rgba(90, 83, 121, ${particle.opacity})`; //-----change links color HERE can have single color (rgba(106, 125, 200, ${particle.opacity})) or pull from colors array(rgba(${particle.color}, ${particle.opacity}))
-            ctx.lineWidth = 0.5; //link thickness
+            ctx.lineWidth = 0.8; //link thickness
             ctx.stroke();
           }
         });
