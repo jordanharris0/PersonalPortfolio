@@ -29,8 +29,9 @@ const Canvas = () => {
     const ctx = canvas.getContext("2d");
 
     //set canvas dimentions to match screen size
-    canvas.width = window.innerWidth;
+    canvas.width = document.body.scrollWidth;
     canvas.height = window.innerHeight;
+    canvas.style.display = "block";
 
     //array to hold particles
     let particles = [];
