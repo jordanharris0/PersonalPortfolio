@@ -44,6 +44,7 @@ const Canvas = () => {
     const colors = [
       "88, 139, 139", //dark cyan
       "90, 83, 121", //violet
+      "255, 255, 255", //white
     ];
 
     //class to create a particle
@@ -108,8 +109,10 @@ const Canvas = () => {
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         // gradually adjust opacity based on distance
-        const opacity = 0.7 - distance / maxDistance; // closer = more opaque -- change opacity of dots via distance
+        const opacity = 0.8 - distance / maxDistance; // closer = more opaque -- change opacity of dots via distance
         particle.opacity = Math.max(opacity, 0); // ensure opacity is not below 0
+
+        //only draws links and grab effect if disabledLinks is false
 
         // link particles within mouse radius
         particles.forEach((otherParticle) => {
@@ -181,7 +184,7 @@ const Canvas = () => {
     };
   }, [windowSize]);
 
-  return <canvas ref={canvasRef} />;
+  return <canvas id="canvasOne" ref={canvasRef} />;
 };
 
 export default Canvas;

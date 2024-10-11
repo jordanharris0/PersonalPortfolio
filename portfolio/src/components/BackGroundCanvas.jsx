@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import "../styles/about.css";
 
 export default function BackGround() {
   const [init, setInit] = useState(false);
@@ -16,9 +17,7 @@ export default function BackGround() {
   //start particle engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      console.log("Particles Init called");
       await loadFull(engine);
-      console.log("Particles Engine loaded successfully");
     }).then(() => {
       setInit(true);
     });
@@ -31,54 +30,53 @@ export default function BackGround() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleMouseMove = (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      //calculate the maximum distance (diagonal of the screen)
+      const maxDistance = Math.sqrt(
+        window.innerWidth ** 2 + window.innerHeight ** 2
+      );
 
-    //calculate the maximum distance (diagonal of the screen)
-    const maxDistance = Math.sqrt(
-      window.innerWidth ** 2 + window.innerHeight ** 2
-    );
+      //access the particle instance
+      const particlesInstance = particlesRef.current;
 
-    //access the particle instance
-    const particlesInstance = particlesRef.current;
+      if (particlesInstance && particlesInstance.particles) {
+        const particlesArray = particlesInstance.particles._array; // Access particles using their array
 
-    if (particlesInstance && particlesInstance.particles) {
-      const particlesArray = particlesInstance.particles._array; // Access particles using their array
+        particlesArray.forEach((particle) => {
+          // Calculate the distance from the mouse to the particle
+          const dx = mouseX - particle.position.x;
+          const dy = mouseY - particle.position.y;
 
-      particlesArray.forEach((particle) => {
-        // Calculate the distance from the mouse to the particle
-        const dx = mouseX - particle.position.x;
-        const dy = mouseY - particle.position.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-        // Gradually adjust opacity based on distance
-        const opacity = 0.5 - distance / maxDistance; // Closer = more opaque
-        particle.opacity.value = Math.max(opacity, 0); //ensure opacity is not below 0
+          // Gradually adjust opacity based on distance
+          const opacity = 0.8 - distance / maxDistance; // Closer = more opaque
+          particle.opacity.value = Math.max(opacity, 0); //ensure opacity is not below 0
+        });
+      }
+    };
 
-        //   const maxRadius = 250; //Max radius for the opacity of linked particles
-        //   if (distance < maxRadius) {
-        //     // Only set opacity for particles within the radius of the mouse
-        //     particlesInstance._options.particles.links.opacity = 0.8;
-        //   } else {
-        //     particlesInstance._options.particles.links.opacity = 0; // Set opacity to 0 outside the radius
-        //   }
-      });
-    }
-  };
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove); // Cleanup on unmount
+    };
+  }, []);
 
   //all particle data information
   const particlesLoaded = (container) => {
-    console.log(container);
     particlesRef.current = container;
   };
 
   const getParticleCount = () => {
     const windowSize = window.innerWidth;
-    if (windowSize > 1600) return 600;
-    if (windowSize > 1300) return 575;
-    if (windowSize > 1100) return 500;
-    if (windowSize > 800) return 300;
+    if (windowSize > 1600) return 300;
+    if (windowSize > 1300) return 275;
+    if (windowSize > 1100) return 250;
+    if (windowSize > 800) return 225;
     if (windowSize > 600) return 200;
     return 100;
   };
@@ -95,12 +93,13 @@ export default function BackGround() {
         },
         color: {
           value: [
-            "rgb(81, 162, 233)", //blue 80%
-            "rgb(255, 255, 255)", // white 20%
+            "rgb(88, 139, 139)", //dark cyan
+            "rgb(90, 83, 121)", //violet
+            "rgb(255, 255, 255)",
           ],
         },
         opacity: {
-          value: { min: 0.3, max: 1 },
+          value: { min: 0.5, max: 1 },
           anim: {
             enable: false,
           },
@@ -111,16 +110,9 @@ export default function BackGround() {
         },
         move: {
           enable: true,
-          speed: 1, //speed of particles
+          speed: 0.5, //speed of particles
           direction: "none",
           random: true,
-        },
-        links: {
-          enable: true, //links particles together
-          distance: 100, //distance threshold for connecting particles
-          color: "rgb(81, 162, 233)",
-          opacity: 0,
-          width: 1,
         },
         zLayers: -1,
       },
@@ -132,17 +124,13 @@ export default function BackGround() {
       },
       detectRetina: true,
     }),
-    []
+    [windowSize]
   );
 
   if (init) {
     return (
       <>
-        <div
-          id="hero"
-          style={{ height: "100vh", width: "100vw", position: "relative" }}
-          onMouseMove={handleMouseMove}
-        >
+        <div id="canvasTwo">
           <Particles
             id="tsparticles"
             particlesLoaded={particlesLoaded}

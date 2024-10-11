@@ -1,47 +1,29 @@
-.nav-bar {
-  position: absolute;
-  bottom: -80px; /* Start slightly offscreen at the bottom */
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 10px 0;
-  transition: all 0.5s ease-in-out; /* Smooth transition */
-  text-align: center;
-}
-
-.nav-bar ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.nav-bar ul li {
-  display: inline;
-}
-
-.nav-bar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.nav-bar ul li a:hover {
-  color: #50c878; /* A nice green for hover */
-}
-
-/* Fixed state of nav-bar when user scrolls */
-.nav-bar-fixed {
-  position: fixed;
+/* Sticky Navbar */
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  z-index: 3;
-  background-color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  left: 0;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.9);
+  z-index: 1000;
+  padding: 10px 0;
 }
 
-/* Hidden state of nav-bar */
-.nav-bar-hidden {
-  bottom: 0; /* Slide it up smoothly from the bottom */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: rgb(88, 139, 139);
+}
+
+.navbar li a.active {
+  font-weight: bold;
+  color: rgb(90, 83, 121);
 }

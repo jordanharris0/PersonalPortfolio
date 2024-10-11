@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
-import Canvas from "./components/Canvas";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
 
@@ -10,7 +9,11 @@ function App() {
     <>
       <Hero />
       <NavBar />
-      <About />
+      <section id="about">
+        <About />
+      </section>
+      <section id="projects">{/* <Projects /> */}</section>
+      <section id="contact">{/* <Contact /> */}</section>
     </>
   );
 }
