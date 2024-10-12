@@ -42,10 +42,11 @@ const Canvas = () => {
 
     //array of colors -- add/change particle color here
     const colors = [
-      "88, 139, 139", //dark cyan
-      "90, 83, 121", //violet
+      "51, 101, 138", //blue
+      "114, 189, 163", //purple
       "255, 255, 255", //white
     ];
+    const linkColor = ["114, 189, 163"]; //change links color HERE, can have single color or add multiple via adding linkColor[Math.floor(Math.random() * linkColor.length)]; line 130
 
     //class to create a particle
     class Particle {
@@ -126,7 +127,7 @@ const Canvas = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(90, 83, 121, ${particle.opacity})`; //-----change links color HERE can have single color (rgba(106, 125, 200, ${particle.opacity})) or pull from colors array(rgba(${particle.color}, ${particle.opacity}))
+            ctx.strokeStyle = `rgba(${linkColor}, ${particle.opacity})`;
             ctx.lineWidth = 0.8; //link thickness
             ctx.stroke();
           }

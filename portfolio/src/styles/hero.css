@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(17, 17, 17);
 }
 
 #canvasOne {
@@ -39,11 +39,12 @@
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  background-color: transparent;
-  color: rgb(88, 139, 139);
-  border: 1px solid rgb(88, 139, 139);
+  background-color: rgba(0, 5, 5, 0.5);
+  color: rgb(51, 101, 138);
+  border: 1px solid rgb(51, 101, 138);
   border-radius: 5px;
+  font-weight: bold;
 }
-span {
-  color: rgb(88, 139, 139);
+#heroSpan {
+  color: rgb(51, 101, 138);
 }
