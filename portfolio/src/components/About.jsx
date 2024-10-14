@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../styles/about.css";
-
 import { useInView } from "react-intersection-observer";
 import person from "../images/person.png";
 import css from "../images/css.png";
