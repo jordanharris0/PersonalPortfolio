@@ -9,7 +9,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import "../styles/about.css";
 
-export default function BackGround() {
+const BackGround = React.memo(() => {
   const [init, setInit] = useState(false);
   const particlesRef = useRef(null);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -141,4 +141,6 @@ export default function BackGround() {
     );
   }
   return <></>;
-}
+});
+
+export default BackGround;

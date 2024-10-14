@@ -1,19 +1,30 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import "./App.css";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
+import Projects from "./components/Porjects";
+import Contact from "./components/Contact";
+import BackGround from "./components/BackGroundCanvas";
 
 function App() {
+  const [activeSection, setActiveSection] = useState("hero");
+
   return (
     <>
-      <Hero />
-      <NavBar />
-      <section id="about">
-        <About />
-      </section>
-      <section id="projects">{/* <Projects /> */}</section>
-      <section id="contact">{/* <Contact /> */}</section>
+      <BackGround />
+
+      <Hero setActiveSection={setActiveSection} />
+
+      <NavBar activeSection={activeSection} />
+
+      <About setActiveSection={setActiveSection} />
+
+      <Projects setActiveSection={setActiveSection} />
+
+      <Contact setActiveSection={setActiveSection} />
     </>
   );
 }
