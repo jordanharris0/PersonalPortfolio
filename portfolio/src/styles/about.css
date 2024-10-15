@@ -9,6 +9,7 @@
 .about-title-container {
   width: 100%;
   align-items: center;
+  margin-top: 60px;
 }
 .about-title {
   text-align: center;
@@ -135,7 +136,7 @@
 }
 
 .card-content::after {
-  --size: 2px;
+  --size: 0px;
   z-index: -1;
 }
 
@@ -150,17 +151,5 @@
   to {
     filter: blur(3vmin);
     transform: scale(1.05);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
