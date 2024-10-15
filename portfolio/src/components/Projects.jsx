@@ -17,7 +17,7 @@ export default function Projects({ setActiveSection }) {
   return (
     <section ref={ref} id="projects" className="projects-section">
       <div className="projects-title-container">
-        <h1 className="project-title">Projects Section</h1>
+        <h1 className="project-title">Projects</h1>
       </div>
 
       {/* Content */}

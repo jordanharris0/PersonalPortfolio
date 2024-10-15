@@ -44,7 +44,59 @@
   border: 1px solid rgb(51, 101, 138);
   border-radius: 5px;
   font-weight: bold;
+  transition: 0.5s ease;
+  user-select: none;
+  box-shadow: transparent;
+  text-shadow: none;
 }
+
+.aboutButton:hover {
+  color: #ffffff;
+  background: rgb(51, 101, 138);
+  border: 1px solid rgb(51, 101, 138);
+  text-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff, 0 0 12px #ffffff;
+  box-shadow: 0 0 5px rgb(51, 101, 138), 0 0 20px rgb(51, 101, 138),
+    0 0 50px rgb(51, 101, 138), 0 0 100px rgb(51, 101, 138);
+}
+
 #heroSpan {
   color: rgb(51, 101, 138);
+}
+
+/* media query for tablets */
+@media (max-width: 820px) {
+  #hero {
+    height: 80vh;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .aboutButton {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* edia query for smartphones */
+@media (max-width: 480px) {
+  #hero {
+    height: 75vh;
+  }
+
+  .hero-content {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  #heroSpan {
+    font-size: 1.5rem;
+  }
+
+  .aboutButton {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
 }

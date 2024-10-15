@@ -28,7 +28,8 @@ export default function Hero({ setActiveSection }) {
           <h1>
             Hello, I'm <span id="heroSpan">Jordan</span>.
           </h1>
-          <h1>Skilled in building web applications end-to-end.</h1>
+          <h1>Creative developer with a passion for web and game design.</h1>
+          {/* <h1>Skilled in building web applications end-to-end.</h1> */}
           <button className="aboutButton" onClick={handleViewMyWorkClick}>
             View My Work ↓
           </button>

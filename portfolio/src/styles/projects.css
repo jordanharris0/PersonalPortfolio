@@ -60,12 +60,12 @@
 }
 
 .project-details a {
-  color: #ff4c4c;
+  color: rgb(114, 189, 163);
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
   margin-top: 10px;
-  border-bottom: 2px solid #ff4c4c;
+  border-bottom: 2px solid rgb(114, 189, 163);
 }
 
 .project-details a:hover {
@@ -94,7 +94,7 @@
 }
 
 .project-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* radiant glow */
@@ -130,21 +130,31 @@
 @keyframes blur-animation {
   to {
     filter: blur(3vmin);
-    transform: scale(1.05);
+    transform: scale(1.01);
   }
 }
 
 /* media queries */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .project-container {
     flex-direction: column;
+    padding-top: 0;
+  }
+
+  .projects-title-container {
+    margin-top: 40px;
+  }
+
+  .project-title {
+    margin-bottom: 0;
   }
 
   .project-details {
     max-width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
+    font-size: 1.3rem;
   }
 
   .project-image-container {
