@@ -3,10 +3,11 @@ import { useInView } from "react-intersection-observer";
 import CopilotHome from "../images/CopilotHome.jpg";
 import clean from "../images/clean.jpg";
 import sidescroller from "../images/sidescroller.jpg";
+import portfolio from "../images/portfolio.png";
 import "../styles/projects.css";
 
 export default function Projects({ setActiveSection }) {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     if (inView) {
@@ -45,13 +46,20 @@ export default function Projects({ setActiveSection }) {
       {/* project 2 */}
       <div className="project-container project-right">
         <div className="project-image-container">
-          <img className="project-image" src={CopilotHome} alt="Project 2" />
+          <img className="project-image" src={portfolio} alt="Project 2" />
         </div>
         <div className="project-details">
-          <h2>Project title 2</h2>
-          <p>Brief description</p>
+          <h2>Personal Portfolio</h2>
+          <p>
+            Modern web application built with React and optimized using Vite,
+            featuring an interactive particle hero canvas with custom-built
+            logic and tsParticles for dynamic background effects. It integrates
+            Framer Motion for smooth transitions and animations, ensuring a
+            seamless user experience, and includes a contact form powered by
+            Nodemailer for handling email submissions.
+          </p>
           <a
-            href="https://github.com/maisycapps/Copilot"
+            href="https://github.com/jordanharris0/PersonalPortfolio"
             target="_blank"
             rel="noopener noreferrer"
           >

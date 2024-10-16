@@ -5,7 +5,7 @@ import "../styles/contact.css";
 import Footer from "./Footer";
 
 export default function Contact({ setActiveSection }) {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.1 });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,51 +65,69 @@ export default function Contact({ setActiveSection }) {
         </div>
         {/* content */}
         <div className="contact-form-container">
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form
+            onSubmit={handleSubmit}
+            className="contact-form"
+            autoComplete="on"
+          >
             <div className="form-group">
-              <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="name">
+                Name:
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  autoComplete="name"
+                />
+              </label>
             </div>
             <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="email">
+                Email:
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  autoComplete="email"
+                />
+              </label>
             </div>
             <div className="form-group">
-              <label>Phone Number</label>
-              <input
-                type="text"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                required
-              />
+              <label htmlFor="phone">
+                Phone Number:
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                  autoComplete="tel"
+                />
+              </label>
             </div>
             <div className="form-group">
-              <label>Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                onInput={handleTextareResize}
-                style={{
-                  minheight: "100px",
-                  height: "100px",
-                  overflow: "hidden",
-                }}
-                required
-              />
+              <label>
+                Message:
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  onInput={handleTextareResize}
+                  style={{
+                    minheight: "100px",
+                    height: "100px",
+                    overflow: "hidden",
+                  }}
+                  required
+                />
+              </label>
             </div>
             <button type="submit" className="form-button">
               Send Message

@@ -42,7 +42,7 @@ const Canvas = () => {
 
     //array of colors -- add/change particle color here
     const colors = [
-      "51, 101, 138", //blue
+      "48, 102, 190", //blue
       "114, 189, 163", //green
       "255, 255, 255", //white
     ];
