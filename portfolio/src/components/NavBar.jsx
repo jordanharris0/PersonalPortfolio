@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/navBar.css";
 import { motion } from "framer-motion";
 
 const linkVariants = {
-  active: { color: "rgb(51, 101, 138)" },
+  active: {
+    color: "rgb(114, 189, 163)",
+  },
   inactive: { color: "rgb(255, 255, 255)" },
 };
 export default function NavBar({ activeSection }) {

@@ -10,10 +10,10 @@ import js from "../images/js.png";
 import node from "../images/node.png";
 import postman from "../images/postman.png";
 import react from "../images/react.png";
-import { transform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function About({ setActiveSection }) {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     if (inView) {
@@ -26,57 +26,89 @@ export default function About({ setActiveSection }) {
       <section id="about" className="about-section" ref={ref}>
         {/* title */}
         <div className="about-title-container">
-          <h1 className="about-title">About Me</h1>
+          <h1 className="about-title">About</h1>
         </div>
 
         {/* about content */}
         <div className="about-content">
           <div className="about-left">
-            <img src={person} alt="person icon" className="about-icon" />
-            <p className="about-paragraph">
-              I’m someone with a passion for building intuitive, user-friendly
-              applications. With experience in both front-end and back-end
-              development, I specialize in creating dynamic web experiences that
-              integrate seamless functionality with clean, responsive design. I
-              love solving complex problems and continuously learning new
-              technologies to stay at the forefront of the ever-evolving tech
-              landscape. Whether it's developing RESTful APIs, designing
-              interactive UIs, or working with databases, I’m dedicated to
-              delivering high-quality solutions that make an impact
-            </p>
+            <motion.img
+              src={person}
+              alt="person icon"
+              className="about-icon"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.75, delay: 0.5 }}
+            />
+            <motion.p
+              className="about-paragraph"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 1, delay: 0.75 }}
+            >
+              I’m driven by a passion for creating intuitive, user-friendly
+              applications and developing immersive game experiences. With
+              expertise in both front-end and back-end development, I specialize
+              in building dynamic web projects that seamlessly integrate
+              functionality with clean, responsive design. My game design
+              skills, including level creation and interactive elements, blend
+              creativity with technical precision. Whether it's developing
+              RESTful APIs, designing interactive UIs, or managing databases,
+              I’m committed to delivering impactful, high-quality solutions.
+            </motion.p>
           </div>
           <div className="about-right">
             <div className="icon-grid">
               <div className="icon-row">
-                <div className="icon-card">
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 1 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={js} alt="js" style={{ borderRadius: "5px" }} />
                     </div>
                     <span id="about-span">JavaScript</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="icon-row">
-                <div className="icon-card">
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 1.2 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={git} alt="git" />
                     </div>
                     <span id="about-span">Git</span>
                   </div>
-                </div>
-                <div className="icon-card">
+                </motion.div>
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 2.2 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={postman} alt="postman" />
                     </div>
                     <span id="about-span">Postman</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="icon-row">
-                <div className="icon-card">
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 1.4 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img
@@ -87,41 +119,61 @@ export default function About({ setActiveSection }) {
                     </div>
                     <span id="about-span">React</span>
                   </div>
-                </div>
-                <div className="icon-card">
+                </motion.div>
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 2.4 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={node} alt="node.js" />
                     </div>
                     <span id="about-span">Node.js</span>
                   </div>
-                </div>
-                <div className="icon-card">
+                </motion.div>
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 2 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={express} alt="express.js" />
                     </div>
                     <span id="about-span">Express.js</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="icon-row">
-                <div className="icon-card">
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 1.6 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={css} alt="css" />
                     </div>
                     <span id="about-span">CSS</span>
                   </div>
-                </div>
-                <div className="icon-card">
+                </motion.div>
+                <motion.div
+                  className="icon-card"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  transition={{ duration: 1, delay: 1.8 }}
+                >
                   <div className="card-content">
                     <div className="icon">
                       <img src={html} alt="html" />
                     </div>
                     <span id="about-span">HTML</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

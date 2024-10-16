@@ -14,11 +14,7 @@ body {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
-section {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+
+main {
+  flex-grow: 1;
 }

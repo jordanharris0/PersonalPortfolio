@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.projects-title-container {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* single project container */
+.project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  max-width: 100%;
+  width: 90vw;
+  padding: 30px;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.project-left .project-details {
+  text-align: left;
+  margin-right: 3rem;
+}
+
+.project-right .project-details {
+  text-align: right;
+  margin-left: 3rem;
+}
+
+/* project details */
+.project-details {
+  flex: 1;
+}
+
+.project-details h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  margin-bottom: 10px;
+}
+
+.project-details a {
+  color: rgb(114, 189, 163);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  border-bottom: 2px solid rgb(114, 189, 163);
+}
+
+.project-details a:hover {
+  color: #fff;
+}
+
+/* project image container */
+.project-image-container {
+  max-width: 80%; /* change to increase image size */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  position: relative;
+  height: auto;
+  margin: 0 auto;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+/* radiant glow */
+.project-image-container::before,
+.project-image-container::after {
+  --size: 5px;
+  content: "";
+  position: absolute;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: calc(100% + var(--size));
+  height: calc(100% + var(--size));
+  background: radial-gradient(circle at 0 0, hsl(27deg 93% 60%), transparent),
+    radial-gradient(circle at 100% 0, #00a6ff, transparent),
+    radial-gradient(circle at 0 100%, #ff0056, transparent),
+    radial-gradient(circle at 100% 100%, #6500ff, transparent);
+  border-radius: 10px;
+}
+
+.project-image-container::after {
+  --size: 0px;
+  z-index: -1;
+}
+
+.project-image-container::before {
+  --size: 5px;
+  z-index: -2;
+  filter: blur(2vmin);
+  animation: blur-animation 3s ease-in-out alternate infinite;
+}
+
+/* Keyframes for glow animation */
+@keyframes blur-animation {
+  to {
+    filter: blur(3vmin);
+    transform: scale(1.01);
+  }
+}
+
+/* media queries */
+@media (max-width: 1024px) {
+  .project-container {
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .projects-title-container {
+    margin-top: 40px;
+  }
+
+  .project-title {
+    margin-bottom: 0;
+  }
+
+  .project-details {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+
+  .project-image-container {
+    max-width: 100%;
+  }
+}

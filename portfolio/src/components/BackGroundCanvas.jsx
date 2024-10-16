@@ -93,8 +93,8 @@ const BackGround = React.memo(() => {
         },
         color: {
           value: [
-            "rgb(88, 139, 139)", //dark cyan
-            "rgb(90, 83, 121)", //violet
+            "rgb(114, 189, 163)",
+            "rgb(48, 102, 190)",
             "rgb(255, 255, 255)",
           ],
         },

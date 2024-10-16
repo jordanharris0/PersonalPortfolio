@@ -42,11 +42,12 @@ const Canvas = () => {
 
     //array of colors -- add/change particle color here
     const colors = [
-      "51, 101, 138", //blue
-      "114, 189, 163", //purple
+      "48, 102, 190", //blue
+      "114, 189, 163", //green
       "255, 255, 255", //white
     ];
-    const linkColor = ["114, 189, 163"]; //change links color HERE, can have single color or add multiple via adding linkColor[Math.floor(Math.random() * linkColor.length)]; line 130
+    const linkColor = ["114, 189, 163"]; //change links color HERE, can have single color
+    //or add multiple via adding linkColor[Math.floor(Math.random() * linkColor.length)]; line 130
 
     //class to create a particle
     class Particle {
@@ -68,7 +69,7 @@ const Canvas = () => {
         ctx.fill();
       }
 
-      //function to update a particle's position and handle bouncing
+      //function to update a particle's position
       update() {
         this.x += this.vx;
         this.y += this.vy;
@@ -112,8 +113,6 @@ const Canvas = () => {
         // gradually adjust opacity based on distance
         const opacity = 0.8 - distance / maxDistance; // closer = more opaque -- change opacity of dots via distance
         particle.opacity = Math.max(opacity, 0); // ensure opacity is not below 0
-
-        //only draws links and grab effect if disabledLinks is false
 
         // link particles within mouse radius
         particles.forEach((otherParticle) => {

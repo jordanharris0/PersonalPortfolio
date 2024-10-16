@@ -23,4 +23,6 @@
   color: rgb(255, 255, 255);
   color: inherit;
   cursor: pointer;
+  text-shadow: 0 0 1px rgb(255, 255, 255);
+  font-size: 1.2rem;
 }

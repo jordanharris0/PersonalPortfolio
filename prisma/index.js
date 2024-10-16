@@ -36,12 +36,12 @@ router.post("/", async (req, res) => {
       to: process.env.EMAIL_USER,
       subject: `New Contact Form from ${name}`,
       text: `
-        You have received a new contact form submission:
+      You have received a new contact form submission:
 
-         Name: ${name}
-        Email: ${email}
-        Phone: ${phoneNumber}
-        Message: ${message} 
+      Name: ${name}
+      Email: ${email}
+      Phone: ${phoneNumber}
+      Message: ${message} 
       `,
     };
 
