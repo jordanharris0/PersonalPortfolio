@@ -11,7 +11,7 @@ app.use(require("morgan")("dev"));
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Only allow your frontend origin
+    origin: "https://jordanharris.gg", // Only allow your frontend origin
     credentials: true, // Allow credentials such as Authorization headers or cookies
   })
 );
