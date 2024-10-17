@@ -17,7 +17,14 @@ let transporter = nodemailer.createTransport({
 
 //contact submission form route
 router.post("/", async (req, res) => {
-  const { name, email, phoneNumber, message } = req.body;
+  const { name, email, phoneNumber, message, jsChallenge } = req.body;
+
+  //checks if hidden challenge is filled
+  if (jsChallenge !== "userVerified") {
+    return res.status(400).json({
+      error: "Form submission failed. Please make sure JavaScript is enabled.",
+    });
+  }
 
   try {
     //store contact information in the database
