@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Canvas from "./Canvas";
 import "../styles/hero.css";
 import { useInView } from "react-intersection-observer";
@@ -40,7 +40,6 @@ export default function Hero({ setActiveSection }) {
           >
             Creative developer with a passion for web and game design.
           </motion.h1>
-          {/* <h1>Skilled in building web applications end-to-end.</h1> */}
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

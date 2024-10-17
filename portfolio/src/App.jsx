@@ -1,6 +1,4 @@
-import React, { useRef, useState } from "react";
-import { useInView } from "framer-motion";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";

@@ -13,11 +13,19 @@ import react from "../images/react.png";
 import { motion } from "framer-motion";
 
 export default function About({ setActiveSection }) {
-  const { ref, inView } = useInView({ threshold: 0.1 });
+  const { ref, inView } = useInView({ threshold: 0.2 });
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
+    const hasAnimated = localStorage.getItem("hasAnimated", "false");
     if (inView) {
       setActiveSection("about"); //set active section to 'about' when in view
+    }
+
+    if (inView && hasAnimated) {
+      //allows animation only on rerender
+      setShouldAnimate(true);
+      localStorage.setItem("hasAnimated", "true");
     }
   }, [inView, setActiveSection]);
 
@@ -37,13 +45,13 @@ export default function About({ setActiveSection }) {
               alt="person icon"
               className="about-icon"
               initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.75, delay: 0.5 }}
             />
             <motion.p
               className="about-paragraph"
               initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
+              animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.75 }}
             >
               I’m driven by a passion for creating intuitive, user-friendly
@@ -63,7 +71,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 1 }}
                 >
                   <div className="card-content">
@@ -78,7 +88,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 1.2 }}
                 >
                   <div className="card-content">
@@ -91,7 +103,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 2.2 }}
                 >
                   <div className="card-content">
@@ -106,7 +120,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 1.4 }}
                 >
                   <div className="card-content">
@@ -123,7 +139,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 2.4 }}
                 >
                   <div className="card-content">
@@ -136,7 +154,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 2 }}
                 >
                   <div className="card-content">
@@ -151,7 +171,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 1.6 }}
                 >
                   <div className="card-content">
@@ -164,7 +186,9 @@ export default function About({ setActiveSection }) {
                 <motion.div
                   className="icon-card"
                   initial={{ opacity: 0, x: 100 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
+                  animate={
+                    shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0 }
+                  }
                   transition={{ duration: 1, delay: 1.8 }}
                 >
                   <div className="card-content">

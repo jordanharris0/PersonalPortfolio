@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   display: block;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 /* about title */
@@ -31,7 +31,7 @@
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: justify;
-  text-shadow: 0 0 1px rgb(255, 255, 255);
+  text-shadow: 0 0 0.2px rgb(255, 255, 255);
 }
 
 .about-left,
@@ -64,8 +64,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .icon-row {
@@ -168,9 +168,9 @@
   }
 
   .about-paragraph {
-    max-width: 90%;
+    max-width: 80%;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .about-left,
@@ -190,7 +190,7 @@
 }
 
 /* media query for smartphones */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .about-title {
     font-size: 2rem;
   }

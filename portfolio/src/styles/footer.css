@@ -21,7 +21,6 @@
 .social-icon {
   width: 30px;
   height: 30px;
-  filter: brightness(0) invert(1); /* Makes icons white */
   transition: transform 0.3s ease;
 }
 
@@ -55,7 +54,7 @@
     0 0 50px rgb(48, 102, 190), 0 0 100px rgb(48, 102, 190);
 }
 
-/* media Query for tablets and smaller screens */
+/* media query for tablets and smaller screens */
 @media (max-width: 768px) {
   .scroll-up-button {
     font-size: 1rem;
@@ -68,7 +67,7 @@
   }
 }
 
-/* media Query for smartphones */
+/* media query for smartphones */
 @media (max-width: 540px) {
   .footer {
     padding: 5px;
