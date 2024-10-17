@@ -49,7 +49,7 @@ export default function Contact({ setActiveSection }) {
     //send form data
     try {
       const response = await axios.post(
-        "http://localhost:3000/contact",
+        "https://personal-portfolio-backend-x54o.onrender.com",
         updatedFormData,
         {
           headers: { "Content-Type": "application/json" },
