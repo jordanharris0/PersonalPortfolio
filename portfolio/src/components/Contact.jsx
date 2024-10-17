@@ -11,6 +11,7 @@ export default function Contact({ setActiveSection }) {
     email: "",
     phoneNumber: "",
     message: "",
+    jsChallenge: "",
   });
   const [status, setStatus] = useState("");
 
@@ -40,16 +41,19 @@ export default function Contact({ setActiveSection }) {
     e.preventDefault();
 
     //hidden java challenge to prevent bots
-    setFormData((prevData) => ({
-      ...prevData,
+    const updatedFormData = {
+      ...formData,
       jsChallenge: "userVerified",
-    }));
+    };
 
     //send form data
     try {
       const response = await axios.post(
         "http://localhost:3000/contact",
-        formData
+        updatedFormData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
       );
       if (response.status === 201) {
         setStatus("Message sent successfully! Jordan will be in contact soon.");
