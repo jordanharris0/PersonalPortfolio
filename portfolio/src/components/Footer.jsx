@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/footer.css";
 import linkedin from "../images/linkedin.png";
 import github from "../images/github.png";

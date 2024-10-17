@@ -38,6 +38,14 @@ export default function Contact({ setActiveSection }) {
   //handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //hidden java challenge to prevent bots
+    setFormData((prevData) => ({
+      ...prevData,
+      jsChallenge: "userVerified",
+    }));
+
+    //send form data
     try {
       const response = await axios.post(
         "http://localhost:3000/contact",
@@ -50,6 +58,7 @@ export default function Contact({ setActiveSection }) {
           email: "",
           phoneNumber: "",
           message: "",
+          jsChallenge: "",
         });
       }
     } catch (error) {
@@ -129,6 +138,11 @@ export default function Contact({ setActiveSection }) {
                 />
               </label>
             </div>
+            <input
+              type="hidden"
+              name="jsChallenge"
+              value={formData.jsChallenge}
+            />
             <button type="submit" className="form-button">
               Send Message
             </button>

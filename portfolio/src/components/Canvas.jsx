@@ -143,7 +143,7 @@ const Canvas = () => {
                 (particle.y - otherParticle.y) ** 2
             );
             if (grabDistance < 50) {
-              // Link if within grab distance
+              // link if within grab distance
               ctx.beginPath();
               ctx.moveTo(particle.x, particle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
@@ -162,7 +162,6 @@ const Canvas = () => {
     };
 
     //track the mouse postion
-    // let mousePosition = { x: null, y: null };
     const handleMouseMove = (event) => {
       const boundingRect = canvasRef.current.getBoundingClientRect();
       mousePosition.current.x = event.clientX - boundingRect.left;

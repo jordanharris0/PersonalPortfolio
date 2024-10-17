@@ -20,9 +20,10 @@
   font-size: 2.5rem;
   color: #f0f0f0;
   margin-bottom: 20px;
+  text-shadow: 0 0 1px rgb(255, 255, 255);
 }
 
-/* Form styling */
+/* form styling */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -81,10 +82,6 @@ textarea:focus {
   max-width: 250px;
   align-self: center;
 }
-
-/* .form-button:hover {
-  background-color: rgb(105, 155, 137);
-} */
 
 p {
   margin-top: 1rem;

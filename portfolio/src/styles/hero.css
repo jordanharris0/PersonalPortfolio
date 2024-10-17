@@ -92,7 +92,7 @@
   }
 }
 
-/* edia query for smartphones */
+/* media query for smartphones */
 @media (max-width: 480px) {
   #hero {
     height: 75vh;

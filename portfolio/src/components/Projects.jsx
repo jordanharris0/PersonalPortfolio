@@ -27,7 +27,7 @@ export default function Projects({ setActiveSection }) {
         <div className="project-details">
           <h2>Copilot</h2>
           <p>
-            Social media platform built with React, Node.js, Express, and
+            Social media platform built with React, Node.js, Express.js, and
             Prisma, integrating seamless authentication and a user-friendly
             interface.
           </p>
