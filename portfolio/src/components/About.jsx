@@ -17,13 +17,19 @@ export default function About({ setActiveSection }) {
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    const hasAnimated = localStorage.getItem("hasAnimated", "false");
+    const hasAnimated = localStorage.getItem("hasAnimated"); //allows animation only on rerender
+
+    if (hasAnimated === "true") {
+      setShouldAnimate(false);
+    }
+  }, []);
+
+  useEffect(() => {
     if (inView) {
       setActiveSection("about"); //set active section to 'about' when in view
     }
 
-    if (inView && hasAnimated) {
-      //allows animation only on rerender
+    if (inView && !shouldAnimate) {
       setShouldAnimate(true);
       localStorage.setItem("hasAnimated", "true");
     }
