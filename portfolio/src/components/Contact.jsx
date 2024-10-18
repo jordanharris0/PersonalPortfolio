@@ -147,11 +147,11 @@ export default function Contact({ setActiveSection }) {
               name="jsChallenge"
               value={formData.jsChallenge}
             />
+            {status && <p>{status}</p>} {/* display success/error messages */}
             <button type="submit" className="form-button">
               Send Message
             </button>
           </form>
-          {status && <p>{status}</p>} {/* display success/error messages */}
         </div>
         <Footer />
       </section>
