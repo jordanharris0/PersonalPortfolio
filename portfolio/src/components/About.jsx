@@ -60,15 +60,18 @@ export default function About({ setActiveSection }) {
               animate={shouldAnimate ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 1, delay: 0.75 }}
             >
-              I’m driven by a passion for creating intuitive, user-friendly
-              applications and developing immersive game experiences. With
-              expertise in both front-end and back-end development, I specialize
-              in building dynamic web projects that seamlessly integrate
-              functionality with clean, responsive design. My game design
-              skills, including level creation and interactive elements, blend
-              creativity with technical precision. Whether it's developing
-              RESTful APIs, designing interactive UIs, or managing databases,
-              I’m committed to delivering impactful, high-quality solutions.
+              I am driven by a passion for building intuitive, user friendly 
+              applications and engaging interactive experiences. With a background 
+              in full stack web development and game programming, I bring a unique 
+              blend of creativity and technical discipline to every project. 
+              My experience includes developing responsive user interfaces, 
+              building RESTful APIs, managing relational databases, and working 
+              with cloud based services, automation workflows, and serverless architectures. 
+              Alongside my web work, I have designed and implemented game systems, levels, 
+              and interactive mechanics that emphasize performance, usability, and player 
+              experience. Whether I am creating scalable web applications or immersive game 
+              projects, I focus on writing clean, maintainable code and delivering reliable, 
+              high quality solutions.
             </motion.p>
           </div>
           <div className="about-right">
