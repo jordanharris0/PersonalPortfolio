@@ -4,6 +4,7 @@ import CopilotHome from "../images/CopilotHome.jpg";
 import clean from "../images/clean.jpg";
 import sidescroller from "../images/sidescroller.jpg";
 import portfolio from "../images/portfolio.png";
+import eventsummarizer from "../images/eventsummarizer.png";
 import "../styles/projects.css";
 
 export default function Projects({ setActiveSection }) {
@@ -23,6 +24,28 @@ export default function Projects({ setActiveSection }) {
 
       {/* Content */}
       {/* project 1 */}
+      <div className="project-container project-right">
+        <div className="project-image-container">
+          <img className="project-image" src={eventsummarizer} alt="Project 1" />
+        </div>
+        <div className="project-details">
+          <h2>Event Summarizer</h2>
+          <p>
+            A powerful and user-friendly Python CLI tool to fetch, parse, 
+            and summarize Windows Event Viewer logs using OpenAI's GPT API. 
+            Export the results in multiple formats and gain quick insights 
+            into your system events with a clean and colorful terminal interface.
+          </p>
+          <a
+            href="https://github.com/jordanharris0/event_summarizer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore Project
+          </a>
+        </div>
+      </div>
+      {/* project 2 */}
       <div className="project-container project-left">
         <div className="project-details">
           <h2>Copilot</h2>
@@ -43,7 +66,7 @@ export default function Projects({ setActiveSection }) {
           <img className="project-image" src={CopilotHome} alt="Project 1" />
         </div>
       </div>
-      {/* project 2 */}
+      {/* project 3 */}
       <div className="project-container project-right">
         <div className="project-image-container">
           <img className="project-image" src={portfolio} alt="Project 2" />
@@ -67,7 +90,7 @@ export default function Projects({ setActiveSection }) {
           </a>
         </div>
       </div>
-      {/* project 3 */}
+      {/* project 4 */}
       <div className="project-container project-left">
         <div className="project-details">
           <h2>Sidescroller</h2>
@@ -88,7 +111,7 @@ export default function Projects({ setActiveSection }) {
           <img className="project-image" src={sidescroller} alt="Project 3" />
         </div>
       </div>
-      {/* project 4 */}
+      {/* project 5 */}
       <div className="project-container project-right">
         <div className="project-image-container">
           <img className="project-image" src={clean} alt="Project 4" />
